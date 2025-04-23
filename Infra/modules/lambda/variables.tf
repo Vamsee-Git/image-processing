@@ -22,3 +22,9 @@ variable "source_bucket_arn" {
   description = "The arn of the source S3 bucket"
   type        = string
 }
+
+variable "source_bucket_id" {
+  description = "The id of the source S3 bucket"
+  type        = string
+}
+
