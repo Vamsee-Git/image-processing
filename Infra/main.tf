@@ -26,6 +26,7 @@ module "lambda_function" {
   source_bucket     = module.source_bucket.bucket_name
   destination_bucket = module.destination_bucket.bucket_name
   depends_on        = [module.source_bucket, module.destination_bucket]
+  source_bucket_arn = module.source_bucket.arn
 }
 
 module "cloudwatch" {
