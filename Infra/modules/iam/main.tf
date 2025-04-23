@@ -19,9 +19,9 @@ EOF
 resource "aws_iam_policy" "lambda_policy" {
   name        = "lambda_policy"
   description = "Policy for Lambda execution"
-  policy      = <<EOF
+  policy = <<EOF
 {
-2-10-17",
+  "Version": "2012-10-17",
   "Statement": [
     {
       "Effect": "Allow",
@@ -46,7 +46,7 @@ resource "aws_iam_policy" "lambda_policy" {
   ]
 }
 EOF
-}
+
 
 resource "aws_iam_role_policy_attachment" "lambda_policy_attachment" {
   role       = aws_iam_role.lambda_role.name
