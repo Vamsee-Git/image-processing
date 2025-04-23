@@ -22,7 +22,7 @@ module "lambda_role" {
 module "lambda_function" {
   source            = "./modules/lambda"
   function_name     = var.lambda_function_name
-  role_arn          = module.iam.role_arn
+  role_arn          = module.lambda_role.role_arn
   source_bucket     = module.source_bucket.bucket_name
   destination_bucket = module.destination_bucket.bucket_name
   depends_on        = [module.source_bucket, module.destination_bucket]
