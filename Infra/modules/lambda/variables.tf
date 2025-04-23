@@ -17,3 +17,8 @@ variable "destination_bucket" {
   description = "The name of the destination S3 bucket"
   type        = string
 }
+
+variable "source_bucket_arn" {
+  description = "The arn of the source S3 bucket"
+  type        = string
+}
