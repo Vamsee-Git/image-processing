@@ -22,7 +22,7 @@ module "lambda_function" {
   function_name     = var.lambda_function_name
   role_arn          = module.lambda_role.role_arn
   source_bucket     = var.source_bucket_name
-  destination_bucket = var.source_bucket_name
+  destination_bucket =  var.destination_bucket_name
 }
 
 module "cloudwatch" {
