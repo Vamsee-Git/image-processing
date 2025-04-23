@@ -1,0 +1,5 @@
+region                = "us-west-2"
+source_bucket_name    = "source-images-bucket-vamsee"
+destination_bucket_name = "processed-images-bucket-vamsee"
+lambda_role_name      = "lambda_execution_role"
+lambda_function_name  = "image_processor"
