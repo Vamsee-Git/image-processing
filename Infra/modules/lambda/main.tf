@@ -18,7 +18,7 @@ resource "aws_lambda_permission" "allow_s3_invoke" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.image_processor.function_name
   principal     = "s3.amazonaws.com"
-  source_arn    = aws_s3_bucket.source_bucket.arn
+  source_arn    = var.source_bucket_arn
 }
 
 resource "aws_s3_bucket_notification" "source_bucket_notification" {
