@@ -15,6 +15,8 @@ module "destination_bucket" {
 module "lambda_role" {
   source    = "./modules/iam"
   role_name = var.lambda_role_name
+  source_bucket_name  = var.source_bucket_name
+  destination_bucket_name = var.destination_bucket_name
 }
 
 module "lambda_function" {
