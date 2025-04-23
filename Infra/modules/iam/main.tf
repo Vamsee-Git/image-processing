@@ -21,7 +21,7 @@ resource "aws_iam_policy" "lambda_policy" {
   description = "Policy for Lambda execution"
   policy      = <<EOF
 {
-  "Version": "2012-10-17",
+2-10-17",
   "Statement": [
     {
       "Effect": "Allow",
@@ -40,7 +40,8 @@ resource "aws_iam_policy" "lambda_policy" {
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
         "logs:PutLogEvents"
-     "
+      ],
+      "Resource": "*"
     }
   ]
 }
