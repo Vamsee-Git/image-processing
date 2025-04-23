@@ -21,8 +21,8 @@ module "lambda_function" {
   source            = "./modules/lambda"
   function_name     = var.lambda_function_name
   role_arn          = module.lambda_role.role_arn
-  source_bucket     = module.source_bucket.bucket_name
-  destination_bucket = module.destination_bucket.bucket_name
+  source_bucket     = var.source_bucket_name
+  destination_bucket = var.source_bucket_name
 }
 
 module "cloudwatch" {
