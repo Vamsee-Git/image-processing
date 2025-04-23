@@ -13,9 +13,9 @@ module "destination_bucket" {
 }
 
 module "lambda_role" {
-  source    = "./modules/iam"
-  role_name = var.lambda_role_name
-  source_bucket_name  = var.source_bucket_name
+  source              = "./modules/iam"
+  role_name           = var.lambda_role_name
+  source_bucket_name  = var.source_bucket_name
   destination_bucket_name = var.destination_bucket_name
 }
 
@@ -23,8 +23,9 @@ module "lambda_function" {
   source            = "./modules/lambda"
   function_name     = var.lambda_function_name
   role_arn          = module.lambda_role.role_arn
-  source_bucket     = var.source_bucket_name
-  destination_bucket =  var.destination_bucket_name
+  source_bucket     = module.source_bucket.bucket_name
+  destination_bucket = module.destination_bucket.bucket_name
+  depends_on        = [module.source_bucket, module.destination_bucket]
 }
 
 module "cloudwatch" {
