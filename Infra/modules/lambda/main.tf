@@ -6,6 +6,10 @@ resource "aws_lambda_function" "image_processor" {
   filename      = "./lambda_function/lambda_function.zip"
   source_code_hash = filebase64sha256("./lambda_function/lambda_function.zip")
 
+  tracing_config {
+    mode = "Active"
+  }
+
   environment {
     variables = {
       DEST_BUCKET = var.destination_bucket
